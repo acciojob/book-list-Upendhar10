@@ -1,27 +1,47 @@
 let BookForm = document.querySelector(".form-group form");
 
+let bookDetails = {
+  title: "",
+  author: "",
+  isbn: "",
+  delete: "",
+};
+
 BookForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  let title = document.getElementById("title").value.trim();
-  let author = document.getElementById("author").value.trim();
-  let isbn = document.getElementById("isbn").value.trim();
+  bookDetails.title = document.getElementById("title").value.trim();
+  bookDetails.author = document.getElementById("author").value.trim();
+  bookDetails.isbn = document.getElementById("isbn").value.trim();
+
+  console.log(bookDetails);
 
   let tbody = document.getElementById("book-list");
-  if (!tbody) return;
 
   let newRow = document.createElement("tr");
-  newRow.innerHTML = `
-    <td>${title}</td>
-    <td>${author}</td>
-    <td>${isbn}</td>
-    <td class="delete" style="cursor:pointer;">❌</td>
-  `;
+
+  // create and populate cells
+  let titleCell = document.createElement("td");
+  titleCell.textContent = bookDetails.title;
+
+  let authorCell = document.createElement("td");
+  authorCell.textContent = bookDetails.author;
+
+  let isbnCell = document.createElement("td");
+  isbnCell.textContent = bookDetails.isbn;
+
+  let deleteCell = document.createElement("td");
+  deleteCell.textContent = "❌";
+
+	deleteCell.classList.add("delete");
+  deleteCell.style.cursor = "pointer";
+
+  newRow.append(titleCell, authorCell, isbnCell, deleteCell);
 
   tbody.appendChild(newRow);
 
-  // Attach click listener to the ❌ after adding to DOM
-  newRow.querySelector(".delete").addEventListener("click", function () {
+  deleteCell.addEventListener("click", function () {
     newRow.remove();
   });
+
 });
