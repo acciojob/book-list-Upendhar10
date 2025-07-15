@@ -1,1 +1,66 @@
 /*  your css code here. If applicable */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: grid;
+  place-content: center;
+}
+
+main h1 {
+  text-align: center;
+  margin-block: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+form input {
+  width: 500px;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+}
+
+form label {
+  font-size: 1.5rem;
+}
+
+form input[type="submit"] {
+  cursor: pointer;
+  background-color: #ccc;
+  color: #000;
+  font-size: 1.25rem;
+}
+
+/* -------------------------------------- */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-block: 2rem;
+  text-align: center;
+}
+
+table th,
+td {
+  padding: 0.5rem;
+}
+
+thead {
+  background-color: #ccc;
+  color: #000;
+}

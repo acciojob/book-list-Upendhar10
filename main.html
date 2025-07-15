@@ -1,16 +1,46 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book List | AccioJob</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>MyBookList</h1>
+      <div class="form-group">
+        <form action="">
+          <label for="title">
+            Title :
+            <input type="text" id="title" name="title" required />
+          </label>
+          <label for="author">
+            Author :
+            <input type="text" id="author" name="author" required />
+          </label>
+          <label for="isbn">
+            ISBN# :
+            <input type="text" id="isbn" name="isbn" required />
+          </label>
+          <input type="submit" value="Add Book" id="submit" />
+        </form>
+      </div>
 
-<html>
-
-<head>
-	<link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
-
-</body>
-
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN#</th>
+            <!-- <th>Status</th> -->
+          </tr>
+        </thead>
+        <tbody id="book-list"></tbody>
+      </table>
+    </main>
+    <!-- script -->
+    <script src="script.js"></script>
+  </body>
 </html>
